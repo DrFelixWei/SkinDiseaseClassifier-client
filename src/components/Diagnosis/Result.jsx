@@ -3,13 +3,20 @@ import { Box, Typography, Link, Paper } from '@mui/material';
 import { PieChart, Pie, Cell } from 'recharts';
 import { useTranslation } from 'react-i18next';
 
-const COLORS = ['#00C49F', '#f0f0f0']; // confidence, remaining
-
 const ConfidenceChart = ({ value }) => {
+  const getConfidenceColor = (confidence) => {
+    if (confidence >= 80) return '#00C49F'; // Green
+    if (confidence >= 50) return '#FFBB28'; // Yellow
+    return '#FF4C4C'; // Red
+  };
+
   const data = [
     { name: 'confidence', value },
     { name: 'rest', value: 100 - value },
   ];
+
+  const confidenceColor = getConfidenceColor(value);
+  const colors = [confidenceColor, '#f0f0f0']; // dynamic + static gray
 
   return (
     <Box position="relative" width={120} height={120}>
@@ -24,7 +31,7 @@ const ConfidenceChart = ({ value }) => {
           dataKey="value"
         >
           {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index]} cornerRadius={30} />
+            <Cell key={`cell-${index}`} fill={colors[index]} cornerRadius={30} />
           ))}
         </Pie>
       </PieChart>
