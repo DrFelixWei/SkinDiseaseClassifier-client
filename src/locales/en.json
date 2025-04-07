@@ -2,6 +2,14 @@
     "title": "Diagnosis My Skin Condition",
     "home": "Home",
     "result": "Result",
+    "confidence": "Confidence",
+    "confidenceLevel": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High"
+    },
+    "recommendation": "Recommendation",
+    "learn_more": "Learn more",
     "diseases": {
         "acne": {
             "name": "Acne/Rosacea",
