@@ -53,7 +53,7 @@ const Home = () => {
 
   return (
     <Box display="flex" flexDirection="column" alignItems="center" width="100%" gap={2}>
-      <Typography variant="h3" component="h1">{t('home')}</Typography>
+      <Typography variant="h3" component="h1">{t('title')}</Typography>
 
       <input
         type="file"
@@ -82,6 +82,9 @@ const Home = () => {
       {error && (
         <Typography color="error" mt={2}>{error}</Typography>
       )}
+
+{/* depending on class link to help */}
+
     </Box>
   );
 };

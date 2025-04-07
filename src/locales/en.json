@@ -1,7 +1,16 @@
 {
+    "title": "Diagnosis My Skin Condition",
     "home": "Home",
-    "conditions": {
-        "a": "a"
+    "diseases": {
+        "acne": "Acne",
+        "eczema": "Eczema",
+        "atopic dermatitis": "Atopic Dermatitis",
+        "psoriasis": "Psoriasis",
+        "tinea": "Tinea",
+        "normal": "Normal"
+    },
+    "warnings": {
+        "renderInactivity": "The backend service is hosted on a free tier which may result in slow response times or downtime. If you experience any issues, please try again later."
     },
     "disclaimer" : "Seek professional medical advice before making any health decisions. The information provided is for educational purposes only and should not be considered a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay in seeking it because of something you have read on this site."
 }
