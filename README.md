@@ -1,11 +1,12 @@
 ## Project Description
-
+This client connects to a machine learning model.
+The model classifies skin images into five categories based on data from the DermNet dataset.
 
 ## Contributors
 - Felix Wei
 
 ## Hosting
-
+https://myskinhealth.netlify.app/
 
 ## Local Testing
 npm run dev -> localhost:5173

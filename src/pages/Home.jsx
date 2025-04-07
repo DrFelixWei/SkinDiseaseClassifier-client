@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Box, Button, Typography, CircularProgress } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { useTranslation } from 'react-i18next';
+import Input from '../components/Diagnosis/Input';
+import Result from '../components/Diagnosis/Result';
+import Error from '../components/Diagnosis/Error';
 
 const Home = () => {
   const { t } = useTranslation();
@@ -55,12 +58,20 @@ const Home = () => {
     <Box display="flex" flexDirection="column" alignItems="center" width="100%" gap={2}>
       <Typography variant="h3" component="h1">{t('title')}</Typography>
 
-      <input
-        type="file"
-        accept="image/*"
-        onChange={handleFileChange}
-        style={{ marginTop: 16 }}
+      <Input
+        handleFileChange={handleFileChange}
       />
+
+      {/* display image */}
+      {file && (
+        <Box mt={3} display="flex" justifyContent="center" alignItems="center">
+          <img
+            src={URL.createObjectURL(file)}
+            alt="Uploaded"
+            style={{ maxWidth: '100%', maxHeight: 200, borderRadius: 8 }}
+          />
+        </Box>
+      )}
 
       <Button
         variant="contained"
@@ -72,15 +83,11 @@ const Home = () => {
       </Button>
 
       {result && (
-        <Box mt={3}>
-          <Typography variant="h6">{t('result')}:</Typography>
-          <Typography variant="body1">{t('class')}: {result.class}</Typography>
-          <Typography variant="body2">{t('confidence')}: {(result.confidence * 100).toFixed(2)}%</Typography>
-        </Box>
+        <Result result={result}/>
       )}
 
       {error && (
-        <Typography color="error" mt={2}>{error}</Typography>
+        <Error error={error}/>
       )}
 
 {/* depending on class link to help */}
