@@ -56,7 +56,13 @@ const Result = ({ result }) => {
     <Box display="flex" flexDirection="column" alignItems="center" width="100%" gap={3} mt={4}>
       <Typography variant="h3">{t('result')}</Typography>
 
-      <Paper elevation={3} sx={{ p: 3, maxWidth: 500, width: '100%', textAlign: 'center' }}>
+      <Paper elevation={3} sx={{ 
+        p: 3, 
+        maxWidth: 500, 
+        width: '100%', 
+        textAlign: 'center',
+        backgroundColor: 'grey',
+        }}>
 
         <Box
           display="flex"
