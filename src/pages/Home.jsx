@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Box, Button, Typography, CircularProgress } from '@mui/material';
+import { Box, Button, Typography, CircularProgress, Paper } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { useTranslation } from 'react-i18next';
 import Input from '../components/Diagnosis/Input';
 import Result from '../components/Diagnosis/Result';
 import Error from '../components/Diagnosis/Error';
+import Help from '../components/Help/Help';
 
 const Home = () => {
   const { t } = useTranslation();
@@ -56,7 +57,11 @@ const Home = () => {
 
   return (
     <Box display="flex" flexDirection="column" alignItems="center" width="100%" gap={2}>
-      <Typography variant="h3" component="h1">{t('title')}</Typography>
+
+      <Box display="flex" justifyContent="center" gap={2} flexWrap="wrap">
+        <Typography variant="h3" component="h1">{t('title')}</Typography>
+        {/* <Help /> */}
+      </Box>
 
       <Input
         handleFileChange={handleFileChange}
@@ -82,6 +87,14 @@ const Home = () => {
         {loading ? <CircularProgress size={24} color="inherit" /> : t('diagnose')}
       </Button>
 
+      {loading && (
+        <Box mt={3} width="60%" display="flex" justifyContent="center">
+          <Typography variant="body1" sx={{ textAlign: 'center' }}>
+            {t('warnings.renderInactivity')}
+          </Typography>
+        </Box>
+      )}
+
       {result && (
         <Result result={result}/>
       )}
@@ -90,7 +103,22 @@ const Home = () => {
         <Error error={error}/>
       )}
 
-{/* depending on class link to help */}
+      {/* DISCLAIMER */}
+      <Box width="100%" mt={4} display="flex" justifyContent="center">
+        <Paper
+          elevation={1}
+          sx={{
+            p: 2,
+            maxWidth: 600,
+            textAlign: 'center',
+            backgroundColor: 'grey.100',
+          }}
+        >
+          <Typography variant="body2" color="text.secondary">
+            {t('disclaimer')}
+          </Typography>
+        </Paper>
+      </Box>
 
     </Box>
   );

@@ -9,35 +9,35 @@
         "high": "High"
     },
     "recommendation": "Recommendation",
-    "learn_more": "Learn more",
+    "learn_more": "Click to Learn more",
     "diseases": {
         "acne": {
             "name": "Acne/Rosacea",
-            "description": "A common skin condition that occurs when hair follicles become clogged with oil and dead skin cells. It can cause pimples, blackheads, and cysts.",
+            "description": "Acne is a common skin condition that occurs when hair follicles become clogged with oil and dead skin cells. It can cause pimples, blackheads, and cysts.",
             "recommendation": "Over-the-counter topical treatments containing benzoyl peroxide or salicylic acid are often effective. For severe cases, prescription medications may be necessary.",
             "link": "https://www.aad.org/public/diseases/acne"
         },
         "eczema": {
             "name": "Eczema",
-            "description": "A condition that makes the skin red, inflamed, and itchy. It can be triggered by allergens, irritants, or stress.",
+            "description": "Eczema is a condition that makes the skin red, inflamed, and itchy. It can be triggered by allergens, irritants, or stress.",
             "recommendation": "Moisturizers and topical corticosteroids are commonly used to manage symptoms. Avoiding known triggers is also important.",
             "link": "https://www.aad.org/public/diseases/excema"
         },
         "atopic dermatitis": {
             "name": "Atopic Dermatitis",
-            "description": "A chronic skin condition characterized by dry, itchy skin. It often occurs in children and can be associated with other allergic conditions.",
+            "description": "Atopic dermatitis is a chronic skin condition characterized by dry, itchy skin. It often occurs in children and can be associated with other allergic conditions.",
             "recommendation": "Regular moisturizing and topical corticosteroids are key to managing symptoms. Avoiding irritants and allergens is also important.",
             "link": "https://www.aad.org/public/diseases/eczema"
         },
         "psoriasis": {
             "name": "Psoriasis",
-            "description": "An autoimmune condition that causes rapid skin cell turnover, leading to thick, red patches covered with silvery scales.",
+            "description": "Psoriasis is an autoimmune condition that causes rapid skin cell turnover, leading to thick, red patches covered with silvery scales.",
             "recommendation": "Topical treatments, phototherapy, and systemic medications are commonly used to manage psoriasis. Lifestyle changes can also help.",
             "link": "https://www.aad.org/public/diseases/psoriasis"
         },
         "tinea": {
             "name": "Tinea (Ringworm)",
-            "description": "A fungal infection that can affect the skin, scalp, or nails. It often appears as a red, itchy rash with a ring-like appearance.",
+            "description": "Tinea is a fungal infection that can affect the skin, scalp, or nails. It often appears as a red, itchy rash with a ring-like appearance.",
             "recommendation": "Antifungal creams or oral medications are typically used to treat tinea infections. Keeping the affected area clean and dry is important.",
             "link": "https://www.aad.org/public/diseases/ringworm"
         },
@@ -47,8 +47,9 @@
         }
     },
     "warnings": {
-        "renderInactivity": "The backend service is hosted on a free tier which may result in slow response times or downtime. If you experience any issues, please try again later."
+        "renderInactivity": "Please be patient. The backend service is hosted on a free tier which may result in slow response times or downtime. If you experience any issues, please try again later."
     },
-    "disclaimer" : "Seek professional medical advice before making any health decisions. The information provided is for educational purposes only and should not be considered a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay in seeking it because of something you have read on this site."
+    "disclaimer" : "Seek professional medical advice before making any health decisions. The information provided is for educational purposes only and should not be considered a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay in seeking it because of something you have read on this site.",
+    "help": "Help"
 }
   
