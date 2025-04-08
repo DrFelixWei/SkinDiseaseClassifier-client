@@ -1,36 +1,13 @@
-import React, { useRef, useState, useEffect } from 'react';
+// Input.jsx
+import React, { useState } from 'react';
 import { Box, Button, Modal } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { FileUpload, PhotoCamera, Science } from '@mui/icons-material';
+import Camera from './Camera';
 
 const Input = ({ handleFileChange }) => {
   const { t } = useTranslation();
-  const videoRef = useRef(null);
-  const canvasRef = useRef(null);
-
   const [isCameraOpen, setIsCameraOpen] = useState(false);
-  const [stream, setStream] = useState(null);
-
-  const openCamera = async () => {
-    try {
-      const mediaStream = await navigator.mediaDevices.getUserMedia({ video: true });
-      setStream(mediaStream);
-      setIsCameraOpen(true);
-      if (videoRef.current) {
-        videoRef.current.srcObject = mediaStream;
-      }
-    } catch (err) {
-      console.error('Error accessing camera:', err);
-    }
-  };
-
-  const closeCamera = () => {
-    if (stream) {
-      stream.getTracks().forEach(track => track.stop());
-    }
-    setIsCameraOpen(false);
-    setStream(null);
-  };
 
   const isValidJpg = (file) => {
     const validTypes = ['image/jpeg'];
@@ -46,24 +23,6 @@ const Input = ({ handleFileChange }) => {
     }
   };
 
-  const capturePhoto = () => {
-    const video = videoRef.current;
-    const canvas = canvasRef.current;
-    if (video && canvas) {
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
-      const ctx = canvas.getContext('2d');
-      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-      canvas.toBlob(blob => {
-        if (blob) {
-          const file = new File([blob], 'captured-image.jpg', { type: 'image/jpeg' });
-          handleFileChange({ target: { files: [file] } });
-        }
-        closeCamera();
-      }, 'image/jpeg');
-    }
-  };
-
   const useTestImage = async () => {
     try {
       const response = await fetch('/test_acne.jpg');
@@ -74,6 +33,11 @@ const Input = ({ handleFileChange }) => {
       console.error('Error loading test image:', err);
       alert('Failed to load test image.');
     }
+  };
+
+  const handleCapture = (file) => {
+    handleFileChange({ target: { files: [file] } });
+    setIsCameraOpen(false);
   };
 
   return (
@@ -92,7 +56,7 @@ const Input = ({ handleFileChange }) => {
           />
         </Button>
 
-        <Button variant="contained" onClick={openCamera}
+        <Button variant="contained" onClick={() => setIsCameraOpen(true)}
           startIcon={<PhotoCamera fontSize="medium" />}
         >
           {t('input.camera')}
@@ -105,33 +69,8 @@ const Input = ({ handleFileChange }) => {
         </Button>
       </Box>
 
-      <Modal open={isCameraOpen} onClose={closeCamera}>
-        <Box
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          justifyContent="center"
-          position="absolute"
-          top="50%"
-          left="50%"
-          style={{
-            transform: 'translate(-50%, -50%)',
-            backgroundColor: 'white',
-            padding: 16,
-            borderRadius: 8,
-          }}
-        >
-          <video ref={videoRef} autoPlay playsInline style={{ width: 300 }} />
-          <canvas ref={canvasRef} style={{ display: 'none' }} />
-          <Box mt={2} display="flex" gap={2}>
-            <Button variant="contained" onClick={capturePhoto}>
-              {t('Capture')}
-            </Button>
-            <Button variant="outlined" onClick={closeCamera}>
-              {t('Cancel')}
-            </Button>
-          </Box>
-        </Box>
+      <Modal open={isCameraOpen} onClose={() => setIsCameraOpen(false)}>
+        <Camera onCapture={handleCapture} onCancel={() => setIsCameraOpen(false)} />
       </Modal>
     </Box>
   );
