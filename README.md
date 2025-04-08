@@ -15,3 +15,6 @@ yarn dev -> localhost:5173
 
 ## Features
 
+
+## Other
+Icon sourced from https://www.flaticon.com/free-icon/skin-disease_6333462
