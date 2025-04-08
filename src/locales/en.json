@@ -1,6 +1,12 @@
 {
     "title": "Diagnosis My Skin Condition",
     "home": "Home",
+    "diagnose": "Diagnose",
+    "input": {
+        "upload": "Upload Image",
+        "camera": "Take Photo",
+        "test": "Use Test Image"
+    },
     "result": "Result",
     "confidence": "Confidence",
     "confidenceLevel": {
@@ -47,9 +53,13 @@
         }
     },
     "warnings": {
-        "renderInactivity": "Please be patient. The backend service is hosted on a free tier which may result in slow response times or downtime. If you experience any issues, please try again later."
+        "renderInactivity": "Please be patient. If you experience any issues, please try again later."
     },
     "disclaimer" : "Seek professional medical advice before making any health decisions. The information provided is for educational purposes only and should not be considered a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay in seeking it because of something you have read on this site.",
-    "help": "Help"
+    "help": "Help",
+    "about": {
+        "title": "About",
+        "description": "This application uses a machine learning model to classify common skin conditions based on images. It is designed to assist in identifying potential skin issues but is not a substitute for professional medical advice."
+    }
 }
   

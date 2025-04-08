@@ -6,6 +6,7 @@ import Input from '../components/Diagnosis/Input';
 import Result from '../components/Diagnosis/Result';
 import Error from '../components/Diagnosis/Error';
 import Help from '../components/Help/Help';
+import About from '../components/About/About';
 
 const Home = () => {
   const { t } = useTranslation();
@@ -61,6 +62,7 @@ const Home = () => {
       <Box display="flex" justifyContent="center" gap={2} flexWrap="wrap">
         <Typography variant="h3" component="h1">{t('title')}</Typography>
         {/* <Help /> */}
+        <About />
       </Box>
 
       <Input
@@ -84,7 +86,7 @@ const Home = () => {
         disabled={!file || loading}
         sx={{ mt: 2 }}
       >
-        {loading ? <CircularProgress size={24} color="inherit" /> : t('diagnose')}
+        {loading ? <CircularProgress size={36} color="inherit" /> : t('diagnose')}
       </Button>
 
       {loading && (

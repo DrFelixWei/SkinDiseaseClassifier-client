@@ -78,8 +78,9 @@ const Input = ({ handleFileChange }) => {
   return (
     <Box display="flex" flexDirection="column" alignItems="center" width="100%" gap={2}>
       <Box display="flex" justifyContent="center" gap={2} flexWrap="wrap">
+
         <Button variant="contained" component="label">
-          {t('Upload Image')}
+          {t('input.upload')}
           <input
             type="file"
             accept=".jpg,.jpeg,image/jpeg"
@@ -88,12 +89,12 @@ const Input = ({ handleFileChange }) => {
           />
         </Button>
 
-        <Button variant="outlined" onClick={openCamera}>
-          {t('Use Camera')}
+        <Button variant="contained" onClick={openCamera}>
+          {t('input.camera')}
         </Button>
 
-        <Button variant="outlined" onClick={useTestImage}>
-          {t('Use Test Image')}
+        <Button variant="contained" onClick={useTestImage}>
+          {t('input.test')}
         </Button>
       </Box>
 
