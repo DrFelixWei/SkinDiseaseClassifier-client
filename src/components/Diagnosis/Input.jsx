@@ -1,6 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Box, Button, Modal } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import { FileUpload, PhotoCamera, Science } from '@mui/icons-material';
 
 const Input = ({ handleFileChange }) => {
   const { t } = useTranslation();
@@ -79,7 +80,9 @@ const Input = ({ handleFileChange }) => {
     <Box display="flex" flexDirection="column" alignItems="center" width="100%" gap={2}>
       <Box display="flex" justifyContent="center" gap={2} flexWrap="wrap">
 
-        <Button variant="contained" component="label">
+        <Button variant="contained" component="label"
+          startIcon={<FileUpload fontSize="medium" />}
+        >
           {t('input.upload')}
           <input
             type="file"
@@ -89,11 +92,15 @@ const Input = ({ handleFileChange }) => {
           />
         </Button>
 
-        <Button variant="contained" onClick={openCamera}>
+        <Button variant="contained" onClick={openCamera}
+          startIcon={<PhotoCamera fontSize="medium" />}
+        >
           {t('input.camera')}
         </Button>
 
-        <Button variant="contained" onClick={useTestImage}>
+        <Button variant="contained" onClick={useTestImage}
+          startIcon={<Science fontSize="medium" />}
+        >
           {t('input.test')}
         </Button>
       </Box>

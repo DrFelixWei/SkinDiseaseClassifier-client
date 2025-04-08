@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Button, Typography, CircularProgress, Paper } from '@mui/material';
+import { Troubleshoot } from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
 import { useTranslation } from 'react-i18next';
 import Input from '../components/Diagnosis/Input';
@@ -84,7 +85,13 @@ const Home = () => {
         variant="contained"
         onClick={handleDiagnose}
         disabled={!file || loading}
-        sx={{ mt: 2 }}
+        sx={{ 
+          mt: 2,
+          padding: '12px 24px',
+          fontSize: '1.25rem',  
+          minWidth: '200px',   
+        }}
+        startIcon={<Troubleshoot fontSize="large" />}
       >
         {loading ? <CircularProgress size={36} color="inherit" /> : t('diagnose')}
       </Button>
