@@ -1,4 +1,3 @@
-// Camera.jsx
 import React, { useRef } from 'react';
 import Webcam from 'react-webcam';
 import { Box, Button } from '@mui/material';
